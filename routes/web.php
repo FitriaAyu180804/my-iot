@@ -3,17 +3,22 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('dashboard', [
+        "title"=> "dashboard"
+    ]);
 });
 
 // dashboard, devices, rules, users
 
 Route::get('/dashboard', function(){
-    return view('dashboard');
+    return view('dashboard', [
+        "title"=> "dashboard"
+    ]);
 });
 
 Route::get('/devices', function(){
     return view('devices', [
+        "title" => "devices",
         "name" => "Sensor Suhu",
         "min_value" => 0,
         "max_value" => 100,
@@ -22,9 +27,13 @@ Route::get('/devices', function(){
 });
 
 Route::get('/rules', function(){
-    return view('rules');
+    return view('rules', [
+        "title"=> "rules"
+    ]);
 });
 
 Route::get('/users', function(){
-    return view('users');
+    return view('users', [
+        "title"=> "users"
+    ]);
 });
